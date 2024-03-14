@@ -1,23 +1,28 @@
 package slime_Survivor;
-
+	
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+ 
+
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		primaryStage.setTitle("Slime Survivor");
-		final Button btn = new Button();
-		btn.setText("something ig");
-		final StackPane root = new StackPane();
-		root.getChildren().add(btn);
-		primaryStage.setScene(new Scene(root, 1280, 800));
-		primaryStage.show();
+		try {
+			BorderPane root = new BorderPane();
+			Scene scene = new Scene(root,400,400);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			KeyHandler controller = new KeyHandler();
+			System.out.println(controller.listen(scene));
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
-
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
