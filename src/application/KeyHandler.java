@@ -10,10 +10,7 @@ public class KeyHandler {
 	KeyCode backwards = KeyCode.S;
 	KeyCode left = KeyCode.A;
 	KeyCode right = KeyCode.D;
-	boolean rightIsPressed = false;
-	boolean leftIsPressed = false;
-	boolean forwardsIsPressed = false;
-	boolean backwardsIsPressed = false;
+	
 	public KeyHandler(KeyCode forwards, KeyCode backwards, KeyCode left, KeyCode right) {
 		this.forwards = forwards;
 		this.backwards = backwards;
@@ -23,58 +20,43 @@ public class KeyHandler {
 	public KeyHandler() {
 		
 	}
-	public boolean isForwards(Scene scene) {
+	public int isForwards(Scene scene) {
 		scene.addEventFilter(KeyEvent.ANY, keyEvent -> {
 			if(keyEvent.getCode() == forwards) {
-				this.forwardsIsPressed = true;
-				System.out.println(forwardsIsPressed);
+				//System.out.println("");
+				return;
 			}
 		});
-		return this.forwardsIsPressed;
+		return 0;
 	}
 	
-	public boolean isLeft(Scene scene) {
+	public int isLeft(Scene scene) {
 		scene.setOnKeyPressed(event -> {
 			if(event.getCode() == left) {
-				leftIsPressed = true;
+				return;
 			}
 		});
-		return leftIsPressed;
+		return 0;
 	}
-	public boolean isRight(Scene scene) {
+	public int isRight(Scene scene) {
 		scene.setOnKeyPressed(event -> {
 			if(event.getCode() == right) {
-				rightIsPressed = true;
+				return;
 			}
 		});
-		return rightIsPressed;
+		return 0;
 	}
-	public boolean isBackwards(Scene scene) {
+	public int isBackwards(Scene scene) {
 		scene.setOnKeyPressed(event -> {
 			if(event.getCode() == backwards) {
-				backwardsIsPressed = true;
+				return;
 			}
 		});
-		return backwardsIsPressed;
+		return 0;
 	}
 	public int[] listen(Scene scene) {
 		int[] pos = new int[]{0,0};
-		if(isForwards(scene)) {
-			pos[1]=1;
-			System.out.println("forwards");
-		}
-		else if(isBackwards(scene)) {
-			pos[1]=-1;
-			System.out.println("backwards");
-		}
-		else if(isLeft(scene)) {
-			pos[0]=-1;
-			System.out.println("left");
-		}
-		else if(isRight(scene)) {
-			pos[0]=1;
-			System.out.println("right");
-		}
+		
 		return pos;
 	}
 }

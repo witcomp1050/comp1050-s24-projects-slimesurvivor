@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-
+import application.KeyHandler;
 
 public class Main extends Application {
 	@Override
@@ -14,6 +14,10 @@ public class Main extends Application {
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
+			KeyHandler controller = new KeyHandler();
+			if(controller.isForwards(scene) == 0) {
+				System.out.println("true");
+			}
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
