@@ -1,8 +1,9 @@
 package application;
 
+import java.util.Arrays;
+
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 
 
 public class KeyHandler {
@@ -10,7 +11,8 @@ public class KeyHandler {
 	KeyCode backwards = KeyCode.S;
 	KeyCode left = KeyCode.A;
 	KeyCode right = KeyCode.D;
-	
+	int x = 0;
+	int y = 0;
 	public KeyHandler(KeyCode forwards, KeyCode backwards, KeyCode left, KeyCode right) {
 		this.forwards = forwards;
 		this.backwards = backwards;
@@ -20,43 +22,37 @@ public class KeyHandler {
 	public KeyHandler() {
 		
 	}
-	public int isForwards(Scene scene) {
-		scene.addEventFilter(KeyEvent.ANY, keyEvent -> {
-			if(keyEvent.getCode() == forwards) {
-				//System.out.println("");
-				return;
-			}
-		});
-		return 0;
-	}
 	
-	public int isLeft(Scene scene) {
-		scene.setOnKeyPressed(event -> {
-			if(event.getCode() == left) {
-				return;
-			}
-		});
-		return 0;
-	}
-	public int isRight(Scene scene) {
-		scene.setOnKeyPressed(event -> {
-			if(event.getCode() == right) {
-				return;
-			}
-		});
-		return 0;
-	}
-	public int isBackwards(Scene scene) {
-		scene.setOnKeyPressed(event -> {
-			if(event.getCode() == backwards) {
-				return;
-			}
-		});
-		return 0;
-	}
 	public int[] listen(Scene scene) {
-		int[] pos = new int[]{0,0};
-		
+		scene.setOnKeyPressed(keyEvent ->{
+			if(keyEvent.getCode() == forwards) {
+				y = 1;
+			}
+			else if(keyEvent.getCode() == backwards) {
+				y = -1;
+			}
+			else if(keyEvent.getCode() == right) {
+				x = 1;
+			}
+			else if(keyEvent.getCode() == left) {
+				x = -1;
+			}
+		});
+		scene.setOnKeyReleased(keyEvent ->{
+			if(keyEvent.getCode() == forwards) {
+				y = 0;
+			}
+			else if(keyEvent.getCode() == backwards) {
+				y = 0;
+			}
+			else if(keyEvent.getCode() == right) {
+				x = 0;
+			}
+			else if(keyEvent.getCode() == left) {
+				x = 0;
+			}
+		});
+		int[] pos = new int[] {this.x,this.y};
 		return pos;
 	}
 }
