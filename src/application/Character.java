@@ -1,19 +1,23 @@
 package application;
 
-public abstract class Character extends Sprite {
+public class Character extends Sprite {
 	
-	private int health = 10;
-	private int damage = 1;
-	private int moveSpeed = 5;
+	private int health;
+	private int moveSpeed;
 	
+	//Constructors
+	public Character() {
+		health = 10;
+		moveSpeed = 5;
+	}
+	public Character(int health, int moveSpeed) {
+		this.health = health;
+		this.moveSpeed = moveSpeed;
+	}
 	
 	//Getters
 	public int getHealth(){
 		return health;
-	}
-	
-	public int getDamage(){
-		return damage;
 	}
 	
 	public int getMoveSpeed(){
@@ -23,10 +27,6 @@ public abstract class Character extends Sprite {
 	//Setters
 	public void setHealth(int h) {
 		health = h;
-	}
-	
-	public void setDamage(int d) {
-		damage = d;
 	}
 	
 	public void setMoveSpeed(int m) {

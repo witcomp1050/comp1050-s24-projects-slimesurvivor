@@ -39,6 +39,9 @@ public abstract class Sprite extends ImageView{
 	void changeY(int y) {
 		setY(getY() + y);
 	}
+	void setID(String id) {
+		ID = id;
+	}
 	
 //	Other methods
 	double getHeight() {
