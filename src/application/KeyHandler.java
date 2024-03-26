@@ -2,6 +2,7 @@ package application;
 
 import java.util.*;
 
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 
@@ -25,7 +26,7 @@ public class KeyHandler {
 		
 	}
 	
-	public double[] listen(Scene scene) {
+	public double[] listen(Parent scene) {
 		scene.setOnKeyPressed(keyEvent ->{
 			codes.add(keyEvent.getCode());
 			if (codes.contains(up)) {
