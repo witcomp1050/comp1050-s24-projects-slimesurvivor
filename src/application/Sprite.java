@@ -33,10 +33,10 @@ public abstract class Sprite extends ImageView{
 	}
 	
 //	Setters
-	void changeX(int x) {
+	void changeX(double x) {
 		setX(getX() + x);
 	}
-	void changeY(int y) {
+	void changeY(double y) {
 		setY(getY() + y);
 	}
 	void setID(String id) {
@@ -52,7 +52,6 @@ public abstract class Sprite extends ImageView{
 		double i = getViewport().getWidth();
 		return i;
 	}
-	
 	boolean hasCollisionWith(Sprite target) {
 		if(this.getBoundsInParent().intersects(target.getBoundsInParent())){
 			return true;

@@ -1,7 +1,10 @@
 package application;
 
+import javafx.scene.image.Image;
+
 public class Player extends Character{
 	
+<<<<<<< Updated upstream
 	final int MAX_ITEMS = 4;
 	final int REWARD_NUM = 3;
 	
@@ -15,6 +18,18 @@ public class Player extends Character{
 	//Setters
 		
 	//Other methods	
+=======
+	Item[] items = new Item[4];
+	int exp = 0;
+	int expNeeded = 30;
+	
+	
+	public Player(int x, int y, String ID, Image png, int health, int moveSpeed, int exp, int expNeeded) {
+		super(x, y, ID, png, health, moveSpeed);
+		this.exp = exp;
+		this.expNeeded = expNeeded;
+	}
+>>>>>>> Stashed changes
 	public void addExp(int amt) {
 		exp += amt;
 		if(exp >= expNeeded) {

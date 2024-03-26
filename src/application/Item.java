@@ -1,12 +1,12 @@
 package application;
 
-public class Items extends Sprite {
+public class Item extends Sprite {
 	private String name;
 	private String description;
 	private int value;
 	private String rarity;
 
-	Items(String name, String description, int value, String rarity) {
+	Item(String name, String description, int value, String rarity) {
 		this.name = name;
 		this.description = description;
 		this.value = value;
