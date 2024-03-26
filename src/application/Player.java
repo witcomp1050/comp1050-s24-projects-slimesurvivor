@@ -2,13 +2,19 @@ package application;
 
 public class Player extends Character{
 	
-	Items[] items = new Items[4];
-	int exp = 0;
-	int expNeeded = 30;
+	final int MAX_ITEMS = 4;
+	final int REWARD_NUM = 3;
 	
+	private boolean maxItems = false;
+	private Items[] items = new Items[MAX_ITEMS];
+	private int exp = 0;
+	private int expNeeded = 30;
 	
+	//Getters
 	
-	
+	//Setters
+		
+	//Other methods	
 	public void addExp(int amt) {
 		exp += amt;
 		if(exp >= expNeeded) {
@@ -20,14 +26,34 @@ public class Player extends Character{
 		exp = extra;
 		expNeeded = (int) 1.2 * expNeeded;
 		
-		//check if items are full and give reward accordingly
-		
+		if(!maxItems) {
+			randReward();
+		}
+		else {
+			setReward();
+		}
+	}
+	
+	public void getItem(Items i) {
+		if(!maxItems) {
+			for(int j = 0; j < items.length; j++) {
+				if(items[j].equals(null)) {
+					items[j] = i;
+					break;
+				}
+			}
+		}
 	}
 	
 	private void randReward() {
-		
+		Items[] rewardOptions = new Items[REWARD_NUM];
+		for(int i)
 	}
+	
 	private void setReward() {
-		
+		Items[] rewardOptions = new Items[REWARD_NUM];
+		for(int i = 0; i < items.length; i++) {
+			rewardOptions[i] = items[(int)(MAX_ITEMS * Math.Random())]
+		}
 	}
 }
