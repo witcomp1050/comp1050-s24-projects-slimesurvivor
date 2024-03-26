@@ -2,7 +2,6 @@ package application;
 
 import java.util.*;
 
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 
@@ -26,8 +25,8 @@ public class KeyHandler {
 		
 	}
 	
-	public double[] listen(Parent scene) {
-		scene.setOnKeyPressed(keyEvent ->{
+	public double[] listen(Scene scene1) {
+		scene1.setOnKeyPressed(keyEvent ->{
 			codes.add(keyEvent.getCode());
 			if (codes.contains(up)) {
 				System.out.println("up");
@@ -51,7 +50,7 @@ public class KeyHandler {
 			System.out.println("X = "+this.x);
 			System.out.println("Y = "+this.y);
 		});
-		scene.setOnKeyReleased(keyEvent -> {
+		scene1.setOnKeyReleased(keyEvent -> {
 			codes.clear();
 			this.x = 0;
 			this.y = 0;
