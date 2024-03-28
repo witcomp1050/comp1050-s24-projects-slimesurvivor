@@ -7,43 +7,34 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.animation.AnimationTimer;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent scene = FXMLLoader.load(getClass().getResource("slime.fxml"));
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			BorderPane root = new BorderPane();
+			Pane pane = FXMLLoader.load(getClass().getResource("slime.fxml"));
 			Image p1Image = new Image("file:sprites/clyde-pixilart.png");
-			Image p1Hurt = new Image("file:sprites/clyde-hurt-pixilart.png");
-			Image e = new Image("file:sprites/red-slime-pixilart.png");
 			Player p1 = new Player(200, 200, "Player 1", p1Image, 100, 50, 0, 10);
-			Enemy en = new Enemy(0, 0, "enemieA", e, 100, 0);
-			root.getChildren().add(p1);
-			root.getChildren().add(en);
-			Scene scene1 = new Scene(root,400,400);
-			KeyHandler controller1 = new KeyHandler();
+			Image p2Image = new Image("file:sprites/clyde-pixilart.png");
+			Player p2 = new Player(200, 200, "Player 1", p2Image, 100, 50, 0, 10);
+			pane.getChildren().add(p1);
+			pane.getChildren().add(p2);
+			Scene scene1 = new Scene(pane,1680,800);
 			primaryStage.setScene(scene1);
-			primaryStage.show();
+			KeyHandler controller = new KeyHandler();
 			AnimationTimer timer = new AnimationTimer() {
 				@Override
 				public void handle(long now) {
-					double[] p1Controller = controller1.listen(scene1);
-					p1.changeX(p1Controller[0]);
-					p1.changeY(p1Controller[1]);
-					en.follow(p1);
-					if(p1.hasCollisionWith(en)) {
-						System.out.println("YOU HAVE TAKE DMG");
-						p1.setHealth(p1.getHealth()-1);
-						if(p1.getHealth()<=0) {
-							System.out.println("You are deadds");
-							System.exit(0);
-						}
-					}
+					double[] Controller = controller.listen(pane);
+					p1.changeX(Controller[0], pane);
+					p1.changeY(Controller[1], pane);
+					p2.changeX(Controller[2], pane);
+					p2.changeX(Controller[3], pane);
 				}
 			};
 			timer.start();
+			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
