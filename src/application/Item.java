@@ -3,13 +3,13 @@ package application;
 public class Item extends Sprite {
 	private String name;
 	private String description;
-	private int value;
+	private int damage;
 	private String rarity;
 
-	Item(String name, String description, int value, String rarity) {
+	Item(String name, String description, int damage, String rarity) {
 		this.name = name;
 		this.description = description;
-		this.value = value;
+		this.damage = damage;
 		this.rarity = rarity;
 	}
 
@@ -22,7 +22,7 @@ public class Item extends Sprite {
 	}
 
 	public int getvalue() {
-		return value;
+		return damage;
 	}
 
 	public String getrarity() {
@@ -30,7 +30,7 @@ public class Item extends Sprite {
 	}
 
 	public void setValue(int value) {
-		this.value = value;
+		this.damage = value;
 	}
 
 	public void setdescription(String description) {
@@ -44,8 +44,14 @@ public class Item extends Sprite {
 	public void setrarity(String rarity) {
 		this.rarity = rarity;
 	}
-
+// used to display item info
+	
+	public String toString() {
+		return "name" + name + "rarity" + rarity + "description" + description + " damage" + damage;
+	}
+	
 //method can be used for when the item is used
-	public void use() {
+	public void Attack() {
+		System.out.println("Attacking with" + name + "for" + damage + "damage.");
 	}
 }
