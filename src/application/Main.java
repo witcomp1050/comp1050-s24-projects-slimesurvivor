@@ -27,10 +27,10 @@ public class Main extends Application {
 				@Override
 				public void handle(long now) {
 					double[] Controller = controller.listen(pane);
-					p1.changeX(Controller[0], pane);
-					p1.changeY(Controller[1], pane);
-					p2.changeX(Controller[2], pane);
-					p2.changeX(Controller[3], pane);
+					p1.changeX(Controller[0]);
+					p1.changeY(Controller[1]);
+					p2.changeX(Controller[2]);
+					p2.changeX(Controller[3]);
 				}
 			};
 			timer.start();
