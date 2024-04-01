@@ -75,7 +75,7 @@ public abstract class Sprite extends ImageView{
 	
 	@Override
 	public String toString() {
-		return ID;
+		return Integer.toString(ID);
   }
   
 	int hasCollisionWith(ArrayList<Enemy> targets) {

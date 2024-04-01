@@ -33,7 +33,7 @@ public class MapTest implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		Image p1Image = new Image("file:sprites/clyde-pixilart.png");
-	    Player p1 = new Player(500, 500, 1, p1Image, 100, 50, 0, 10);
+	    Player p1 = new Player(500, 500, 1, p1Image);
 	    MapPane.getChildren().add(p1);
 	    Spawner spawner = new Spawner(MapPane);
 	    KeyHandler controller = new KeyHandler();

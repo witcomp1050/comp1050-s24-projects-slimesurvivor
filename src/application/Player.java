@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 
 public class Player extends Character{
 	
@@ -14,7 +15,7 @@ public class Player extends Character{
 	private Item[] heldItems = new Item[MAX_ITEMS];
 	private int exp = 0;
 	private int expNeeded = 30;
-	
+	private Image png;
 	//Create all items/weapons
 	Item sword;
 	Item hammer;
@@ -26,16 +27,17 @@ public class Player extends Character{
 	Item[] ALL_ITEMS = {sword, hammer, axe, staff, glove, mace};
 	
 	//Constructors
-	public Player(int xPos, int yPos, String id, Image img) {
+	public Player(int xPos, int yPos, int id, Image img) {
 		setX(xPos);
 		setY(yPos);
 		setID(id);
 		setImage(img);
+		this.png = img;
 	}
 	
-	public Player() {
+/*	public Player() {
 		this(0, 0, null, null);
-	}
+	}*/
 	
 	//Getters
 	
