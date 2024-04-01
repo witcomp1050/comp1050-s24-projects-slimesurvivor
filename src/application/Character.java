@@ -12,7 +12,7 @@ public class Character extends Sprite {
 		health = 10;
 		moveSpeed = 5;
 	}
-	public Character(int x, int y, String ID, Image png, int health, int moveSpeed) {
+	public Character(int x, int y, int ID, Image png, int health, int moveSpeed) {
 		super(x, y, ID, png);
 		this.health = health;
 		this.moveSpeed = moveSpeed;

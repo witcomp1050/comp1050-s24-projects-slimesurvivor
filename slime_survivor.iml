@@ -1,99 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="EclipseModuleManager">
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.base.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.controls.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.fxml.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.graphics.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.media.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.swing.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.web.jar" />
-    <libelement value="file://C:/opt/javafx-sdk-17.0.10/lib/javafx-swt.jar" />
-    <conelement value="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER" />
-    <src_description expected_position="0">
-      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
-    </src_description>
-  </component>
-  <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/bin" />
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="JavaSE-19" jdkType="JavaSDK" />
-    <orderEntry type="library" name="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER" level="application" />
-    <orderEntry type="module-library">
-      <library name="javafx.base.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.base.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.controls.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.controls.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.fxml.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.fxml.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.graphics.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.graphics.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.media.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.media.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.swing.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.swing.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.web.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx.web.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx-swt.jar">
-        <CLASSES>
-          <root url="file://C:/opt/javafx-sdk-17.0.10/lib/javafx-swt.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-  </component>
-</module>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1f3a21;">
+         <children>
+            <ImageView fitHeight="280.0" fitWidth="462.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sprites/title-pixilart.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sprites/play-button-pixilart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sprites/settings-button-pixilart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sprites/quit-button-pixilart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</Pane>

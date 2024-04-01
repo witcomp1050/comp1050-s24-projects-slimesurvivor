@@ -40,9 +40,22 @@ public class Player extends Character{
 	//Getters
 	
 	//Setters
-		
+	  
+  
 	//Other methods		
-	public void addExp(int amt) {
+	void changeX(double x, Pane pane) {
+		if(!(getX()+x < 0)&&!(getX()+x > pane.getWidth()-png.getWidth())) {
+			setX(getX() + x);
+		}
+	}
+	
+	void changeY(double y, Pane pane) {
+		if(!(getY()+y < 0)&&!(getY()+y > pane.getHeight()-png.getHeight())) {
+			setY(getY() + y);
+		}
+	}
+  
+  public void addExp(int amt) {
 		exp += amt;
 		if(exp >= expNeeded) {
 			lvlUp(exp - expNeeded);

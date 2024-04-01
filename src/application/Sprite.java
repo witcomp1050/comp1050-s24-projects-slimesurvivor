@@ -1,26 +1,37 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public abstract class Sprite extends ImageView{
 
-	private String ID;
-	
+	private int ID;
+	private Image png;
+	protected double x;
+	protected double y;
+  
 	//Constructors
+  
 	Sprite(){
 		setX(0);
 		setY(0);
-		this.ID = null;
+		this.ID = 0;
 	}
 	
-	Sprite(String ID, Image png){
+	Sprite(int ID, Image png){
 		setImage(png);
 		setX(0);
 		setY(0);
 		this.ID = ID;
+		this.setPng(png);
 	}
-	Sprite(int x, int y, String ID, Image png){
+  
+	Sprite(int x, int y, int ID, Image png){
+		this.setPng(png);
+		this.x = x;
+		this.y = y;
 		setImage(png);
 		setX(x);
 		setY(y);
@@ -28,7 +39,7 @@ public abstract class Sprite extends ImageView{
 	}
 	
 //	getters
-	String getID() {
+	int getID() {
 		return ID;
 	}
 	
@@ -39,7 +50,7 @@ public abstract class Sprite extends ImageView{
 	void changeY(double y) {
 		setY(getY() + y);
 	}
-	void setID(String id) {
+	void setID(int id) {
 		ID = id;
 	}
 	
@@ -52,6 +63,7 @@ public abstract class Sprite extends ImageView{
 		double i = getViewport().getWidth();
 		return i;
 	}
+  
 	boolean hasCollisionWith(Sprite target) {
 		if(this.getBoundsInParent().intersects(target.getBoundsInParent())){
 			return true;
@@ -64,6 +76,23 @@ public abstract class Sprite extends ImageView{
 	@Override
 	public String toString() {
 		return ID;
+  }
+  
+	int hasCollisionWith(ArrayList<Enemy> targets) {
+		for(int i=0; i<targets.size(); i++) {
+			if(this.getBoundsInParent().intersects(targets.get(i).getBoundsInParent())){
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public Image getPng() {
+		return png;
+	}
+
+	public void setPng(Image png) {
+		this.png = png;
 	}
 
 }
