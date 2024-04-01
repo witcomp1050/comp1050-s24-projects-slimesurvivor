@@ -18,8 +18,10 @@ public class Main extends Application {
 			Image p1Image = new Image("file:sprites/clyde-pixilart.png");
 			Image p1Hurt = new Image("file:sprites/clyde-hurt-pixilart.png");
 			Image e = new Image("file:sprites/red-slime-pixilart.png");
-			Player p1 = new Player(200, 200, "Player 1", p1Image, 100, 50, 0, 10);
 			Enemy en = new Enemy(0, 0, "enemieA", e, 100, 0);
+			Image p2Image = new Image("file:sprites/clyde-hurt-pixilart.png");
+			Player p1 = new Player(200, 200, "Player 1", p1Image);
+			Player p2 = new Player(200, 200, "Player 2", p2Image);
 			root.getChildren().add(p1);
 			root.getChildren().add(en);
 			Scene scene1 = new Scene(root,400,400);

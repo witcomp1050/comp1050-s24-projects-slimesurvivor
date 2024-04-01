@@ -60,5 +60,10 @@ public abstract class Sprite extends ImageView{
 			return false;
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return ID;
+	}
 
 }

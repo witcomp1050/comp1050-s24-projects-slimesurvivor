@@ -36,4 +36,16 @@ public class Character extends Sprite {
 	public void setMoveSpeed(int m) {
 		moveSpeed = m;
 	}
+	
+	//Other Methods
+	public void die(){
+		//Implement death
+	}
+	
+	public void takeDmg(int dmg){
+		setHealth(getHealth() - dmg);
+		if(getHealth() <= 0) {
+			die();
+		}
+	}
 }

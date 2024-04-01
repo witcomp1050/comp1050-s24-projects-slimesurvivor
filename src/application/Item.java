@@ -1,18 +1,25 @@
 package application;
 
 public class Item extends Sprite {
+	
 	private String name;
 	private String description;
-	private int value;
-	private String rarity;
-
-	Item(String name, String description, int value, String rarity) {
+	private int damage;
+	private int moveSpeed;
+	private int[][] movement;
+	private int moveStep = 0;
+	
+	private final double UPGRADE_RATE = 1.4;
+	
+	Item(String name, String description, int damage, int moveSpeed, int[][] movement) {
 		this.name = name;
 		this.description = description;
-		this.value = value;
-		this.rarity = rarity;
+		this.damage = damage;
+		this.moveSpeed = moveSpeed;
+		this.movement = movement;
 	}
-
+	
+	//Getters
 	public String getname() {
 		return name;
 	}
@@ -21,16 +28,23 @@ public class Item extends Sprite {
 		return description;
 	}
 
-	public int getvalue() {
-		return value;
+	public int getDamage() {
+		return damage;
 	}
 
-	public String getrarity() {
-		return rarity;
+	public int getMoveSpeed() {
+		return moveSpeed;
 	}
-
-	public void setValue(int value) {
-		this.value = value;
+	public int[] getPair(int index)throws ArrayIndexOutOfBoundsException {
+		return movement[index];
+	}
+	public int getMoveSequenceLength() {
+		return movement.length;
+	}
+	
+	//Setters
+	public void setValue(int damage) {
+		this.damage = damage;
 	}
 
 	public void setdescription(String description) {
@@ -41,11 +55,17 @@ public class Item extends Sprite {
 		this.name = name;
 	}
 
-	public void setrarity(String rarity) {
-		this.rarity = rarity;
+	public void setMoveSpeed(int moveSpeed) {
+		this.moveSpeed = moveSpeed;
+	}
+	
+	//Other methods
+	public void upgrade() {
+		damage = (int)(damage * UPGRADE_RATE);
+	}
+	
+	public void move() {
+		
 	}
 
-//method can be used for when the item is used
-	public void use() {
-	}
 }
