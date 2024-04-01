@@ -11,7 +11,9 @@ public abstract class Sprite extends ImageView{
 	private Image png;
 	protected double x;
 	protected double y;
+  
 	//Constructors
+  
 	Sprite(){
 		setX(0);
 		setY(0);
@@ -25,6 +27,7 @@ public abstract class Sprite extends ImageView{
 		this.ID = ID;
 		this.setPng(png);
 	}
+  
 	Sprite(int x, int y, int ID, Image png){
 		this.setPng(png);
 		this.x = x;
@@ -60,6 +63,7 @@ public abstract class Sprite extends ImageView{
 		double i = getViewport().getWidth();
 		return i;
 	}
+  
 	boolean hasCollisionWith(Sprite target) {
 		if(this.getBoundsInParent().intersects(target.getBoundsInParent())){
 			return true;
@@ -68,6 +72,12 @@ public abstract class Sprite extends ImageView{
 			return false;
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return ID;
+  }
+  
 	int hasCollisionWith(ArrayList<Enemy> targets) {
 		for(int i=0; i<targets.size(); i++) {
 			if(this.getBoundsInParent().intersects(targets.get(i).getBoundsInParent())){
