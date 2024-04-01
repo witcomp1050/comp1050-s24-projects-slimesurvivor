@@ -4,7 +4,6 @@ import java.util.*;
 
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
 
 
 public class KeyHandler {
@@ -16,7 +15,6 @@ public class KeyHandler {
 	KeyCode Player2_down = KeyCode.DOWN;
 	KeyCode Player2_left = KeyCode.LEFT;
 	KeyCode Player2_right = KeyCode.RIGHT;
-	private List<KeyCode> controlCodes = Arrays.asList(Player1_up, Player1_down, Player1_left, Player1_right, Player2_up, Player2_down, Player2_left, Player2_right);
 	private Set<KeyCode> codes = new HashSet<>();
 	double Player1_x = 0;
 	double Player1_y = 0;
@@ -36,8 +34,9 @@ public class KeyHandler {
 		
 	}
 	
-	public double[] listen(Pane pane) {
-		pane.setOnKeyPressed(keyEvent ->{
+	
+	public double[] listen(Scene scene1) {
+		scene1.setOnKeyPressed(keyEvent ->{
 			codes.add(keyEvent.getCode());
 			if (codes.contains(Player1_up)) {
 				System.out.println("Player1_up");
@@ -80,7 +79,7 @@ public class KeyHandler {
 			System.out.println("Player2_X = "+this.Player2_x);
 			System.out.println("Player2_Y = "+this.Player2_y);
 		});
-		pane.setOnKeyReleased(keyEvent -> {
+		scene1.setOnKeyReleased(keyEvent -> {
 			codes.remove(keyEvent.getCode());
 			if(keyEvent.getCode() == Player1_up || keyEvent.getCode() == Player1_down) {
 				this.Player1_y = 0;
