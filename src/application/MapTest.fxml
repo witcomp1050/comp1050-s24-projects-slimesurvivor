@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="MapPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MapTest">
+   <children>
+      <ImageView fx:id="MapImage" fitHeight="800.0" fitWidth="957.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/map.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="MapImage1" fitHeight="800.0" fitWidth="957.0" layoutX="880.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/map.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="804.0" layoutY="14.0" prefHeight="43.0" prefWidth="73.0" text="00:00" />
+   </children>
+</Pane>
