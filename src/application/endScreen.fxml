@@ -15,9 +15,9 @@
             <Font size="60.0" />
          </font>
       </Label>
-      <Text fx:id="topScoreText" fill="WHITE" layoutX="584.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="topScoreText" fill="WHITE" layoutX="626.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
-            <Font size="60.0" />
+            <Font size="15.0" />
          </font>
       </Text>
       <Button fx:id="titleButton" layoutX="510.0" layoutY="441.0" mnemonicParsing="false" onAction="#backToTitle" prefHeight="128.0" prefWidth="256.0" style="-fx-background-color: transparent;">

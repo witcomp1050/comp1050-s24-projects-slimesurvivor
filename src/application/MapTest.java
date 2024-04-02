@@ -27,7 +27,7 @@ public class MapTest implements Initializable{
 	 
 	 private int sec =0;
 	 private int min =0;
-	 public String time = "";
+	 public static String time = "";
 	 private int frame = 0;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -99,6 +99,9 @@ public class MapTest implements Initializable{
 		time = minStr+":"+secStr;
 		timerLabel.setText(time);
 		p.setHealth(p.getHealth()+1);
+	}
+	public static String getTimeStr() {
+		return time;
 	}
 }
 

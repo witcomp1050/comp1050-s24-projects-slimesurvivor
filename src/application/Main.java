@@ -13,6 +13,7 @@ public class Main extends Application {
 			viewSwitcher.switchTo(View.TITLE);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			ScoreBoard sb = new ScoreBoard();
 	}
 	public static void main(String[] args) {
 		launch(args);
