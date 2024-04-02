@@ -17,7 +17,7 @@ public class Player extends Character{
 	private int expNeeded = 30;
 	private Image png;
 	//Create all items/weapons
-	Item sword;
+	Item sword = new Item("Sword", "A horizontally attacking weapon", 5, 3, new int[][]{{-11,0},{11,0}});
 	Item hammer;
 	Item axe;
 	Item staff;
@@ -34,10 +34,6 @@ public class Player extends Character{
 		setImage(img);
 		this.png = img;
 	}
-	
-/*	public Player() {
-		this(0, 0, null, null);
-	}*/
 	
 	//Getters
 	

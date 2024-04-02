@@ -64,8 +64,36 @@ public class Item extends Sprite {
 		damage = (int)(damage * UPGRADE_RATE);
 	}
 	
-	public void move() {
+	public void move(Player p) {
+		int[] currentRelativePos = getPair(moveStep);
+		int[] nextRelativePos = getPair((moveStep + 1) % getMoveSequenceLength());
+		int[] playerPos = {(int) p.getX(), (int) p.getY()};
+		int[] currentPos = {playerPos[0] + currentRelativePos[0], playerPos[1] + currentRelativePos[1]};
+		int[] nextPos = {playerPos[0] + nextRelativePos[0], playerPos[1] + nextRelativePos[1]};
 		
+		for(int i = 0; i < 2; i++) {
+			if(currentPos[i] < nextPos[i]) {
+				currentPos[i] += moveSpeed;
+			}
+			else if(currentPos[i] > nextPos[i]) {
+				currentPos[i] -= moveSpeed;
+			}
+		}
+		
+		boolean xAligned = currentPos[0] < nextPos[0] + moveSpeed && currentPos[0] > nextPos[0] - moveSpeed;
+		boolean yAligned = currentPos[1] < nextPos[1] + moveSpeed && currentPos[1] > nextPos[1] - moveSpeed;
+		
+		if(xAligned && yAligned) {
+			if(moveStep == getMoveSequenceLength()) {
+				moveStep = 0;
+			}
+			else {
+				moveStep++;
+			}
+		}
+		
+		setX(currentPos[0]);
+		setY(currentPos[1]);
 	}
 
 }

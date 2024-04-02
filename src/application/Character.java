@@ -2,14 +2,14 @@ package application;
 
 import javafx.scene.image.Image;
 
-public class Character extends Sprite {
+public abstract class Character extends Sprite {
 	
 	private int health;
 	private int moveSpeed;
 	
 	//Constructors
 	public Character() {
-		health = 10;
+		health = 100;
 		moveSpeed = 5;
 	}
 	public Character(int x, int y, int ID, Image png, int health, int moveSpeed) {
@@ -38,9 +38,7 @@ public class Character extends Sprite {
 	}
 	
 	//Other Methods
-	public void die(){
-		//Implement death
-	}
+	public abstract void die();
 	
 	public void takeDmg(int dmg){
 		setHealth(getHealth() - dmg);
