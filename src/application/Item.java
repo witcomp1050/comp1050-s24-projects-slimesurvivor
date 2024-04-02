@@ -65,7 +65,33 @@ public class Item extends Sprite {
 	}
 	
 	public void move() {
+		int[] playerPos = {(int) getX(), (int) getY()};
+		int[] currentPos = {playerPos[0] + getPair(moveStep)[0], playerPos[1] + getPair(moveStep)[1]};
+		int[] nextPos = {playerPos[0] + getPair((moveStep + 1) % getMoveSequenceLength())[0], playerPos[1] + getPair((moveStep + 1) % getMoveSequenceLength())[1]};
 		
+		for(int i = 0; i < 2; i++) {
+			if(currentPos[i] < nextPos[i]) {
+				currentPos[i] += moveSpeed;
+			}
+			else if(currentPos[i] > nextPos[i]) {
+				currentPos[i] -= moveSpeed;
+			}
+		}
+		
+		boolean xAligned = (currentPos[0] > nextPos[0] - (moveSpeed / 2 + 1) && currentPos[0] < nextPos[0] + (moveSpeed / 2 + 1));
+		boolean yAligned = (currentPos[1] > nextPos[1] - (moveSpeed / 2 + 1) && currentPos[1] < nextPos[1] + (moveSpeed / 2 + 1));
+		
+		if(xAligned && yAligned) {
+			if(moveStep == getMoveSequenceLength()) {
+				moveStep = 0;
+			}
+			else {
+				moveStep++;
+			}
+		}
+		
+		setX(currentPos[0]);
+		setY(currentPos[1]);
 	}
 
 }
