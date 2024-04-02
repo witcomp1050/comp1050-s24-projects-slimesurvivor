@@ -17,6 +17,9 @@ public class endScreenController  implements Initializable{
 
     @FXML
     private Button titleButton;
+    
+    @FXML
+    private Text scoreLabel;
 
     @FXML
     private Text topScoreText;
@@ -30,8 +33,14 @@ public class endScreenController  implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		playerTimeLabel.setText(MapTest.getTimeStr());
 		ScoreBoard sb = new ScoreBoard();
-		sb.addScore(MapTest.getTimeStr());
+		boolean top =sb.addScore(MapTest.getTimeStr());
 		topScoreText.setText(sb.getScoreBoard());
+		if(top) {
+			scoreLabel.setText("NEW HIGHSCORE");
+		}
+		else {
+			scoreLabel.setText("Leader Board");
+		}
 	}
     
 

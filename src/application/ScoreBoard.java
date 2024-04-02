@@ -67,7 +67,12 @@ public class ScoreBoard {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return true;
+				if(i==0) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 		}
 		return false;

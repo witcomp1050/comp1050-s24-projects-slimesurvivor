@@ -5,28 +5,39 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1f3a21;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.endScreenController">
    <children>
-      <Label fx:id="playerTimeLabel" contentDisplay="CENTER" layoutX="570.0" layoutY="149.0" text="Label" textFill="WHITE">
-         <font>
-            <Font size="60.0" />
-         </font>
-      </Label>
-      <Text fx:id="topScoreText" fill="WHITE" layoutX="626.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Text>
-      <Button fx:id="titleButton" layoutX="510.0" layoutY="441.0" mnemonicParsing="false" onAction="#backToTitle" prefHeight="128.0" prefWidth="256.0" style="-fx-background-color: transparent;">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../sprites/back-button.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
+      <VBox alignment="CENTER" layoutX="492.0" layoutY="125.0" prefHeight="469.0" prefWidth="298.0">
+         <children>
+            <Text fx:id="scoreLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Text>
+            <Label fx:id="playerTimeLabel" contentDisplay="CENTER" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Label>
+            <Text fx:id="topScoreText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="titleButton" mnemonicParsing="false" onAction="#backToTitle" prefHeight="128.0" prefWidth="256.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sprites/back-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </Pane>
