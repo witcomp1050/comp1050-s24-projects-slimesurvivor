@@ -43,7 +43,7 @@ public class MapTest implements Initializable{
 			@Override
 			public void handle(long now) {
 				if(frame == 60) {
-					updateTime();
+					updateTime(p1);
 					frame = 0;
 				}
 				frame++;
@@ -65,17 +65,17 @@ public class MapTest implements Initializable{
 					currentEnemy.follow(p1,listOfEnemies);
 					if(currentEnemy.hasCollisionWith(p1)) {
 						p1.setHealth(p1.getHealth()-1);
-						/*if(p1.getHealth()<=0) {
+						if(p1.getHealth()<=0) {
 							this.stop();
-							viewSwitcher.switchTo(View.TITLE);
-						}*/
+							viewSwitcher.switchTo(View.ENDSCREEN);
+						}
 					}
 				}
 			}
 		};
 		Animationtimer.start();
 	}
-	public void updateTime() {
+	public void updateTime(Player p) {
 		sec++;
 		if(sec == 60) {
 			min++;
@@ -98,6 +98,7 @@ public class MapTest implements Initializable{
 		}
 		time = minStr+":"+secStr;
 		timerLabel.setText(time);
+		p.setHealth(p.getHealth()+1);
 	}
 }
 

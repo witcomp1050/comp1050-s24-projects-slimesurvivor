@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1f3a21;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.endScreenController">
+   <children>
+      <Label fx:id="playerTimeLabel" contentDisplay="CENTER" layoutX="570.0" layoutY="149.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
+      <Text fx:id="topScoreText" fill="WHITE" layoutX="584.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Text>
+      <Button fx:id="titleButton" layoutX="510.0" layoutY="441.0" mnemonicParsing="false" onAction="#backToTitle" prefHeight="128.0" prefWidth="256.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sprites/back-button.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+</Pane>

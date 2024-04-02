@@ -3,7 +3,8 @@ package application;
 public enum View {
 	TITLE("titleScreen.fxml"),
 	MAPTEST("MapTest.fxml"),
-	SETTINGS("settingsScreen.fxml");
+	SETTINGS("settingsScreen.fxml"),
+	ENDSCREEN("endScreen.fxml");
 	private String fileName;
 	
 	View(String fileName){
