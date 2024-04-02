@@ -5,8 +5,6 @@ bin/application/Items.class
 bin/application/KeyHandler.class
 bin/application/Main.class
 bin/application/Sprite.class
-slime_survivor.iml
-bin/application/slime.fxml
 bin/application/Player.class
 bin/application/Main$1.class
 bin/application/Item.class
