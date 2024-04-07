@@ -8,9 +8,10 @@ import javafx.scene.image.ImageView;
 public abstract class Sprite extends ImageView{
 
 	private int ID;
-	private Image png;
 	protected double x;
 	protected double y;
+	protected double height;
+	protected double width;
   
 	//Constructors
   
@@ -25,17 +26,19 @@ public abstract class Sprite extends ImageView{
 		setX(0);
 		setY(0);
 		this.ID = ID;
-		this.setPng(png);
+		width = getImage().getWidth();
+		height = getImage().getHeight();
 	}
   
 	Sprite(int x, int y, int ID, Image png){
-		this.setPng(png);
 		this.x = x;
 		this.y = y;
 		setImage(png);
 		setX(x);
 		setY(y);
 		this.ID = ID;
+		width = getImage().getWidth();
+		height = getImage().getHeight();
 	}
 	
 //	getters
@@ -55,16 +58,15 @@ public abstract class Sprite extends ImageView{
 	}
 	
 //	Other methods
-	double getHeight() {
-		double i = getViewport().getHeight();
-		return i;
+	boolean hasCollisionWithSprite(Sprite target) {
+		if(this.getBoundsInParent().intersects(target.getBoundsInParent())){
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-	double getWidth() {
-		double i = getViewport().getWidth();
-		return i;
-	}
-  
-	boolean hasCollisionWith(Sprite target) {
+	boolean hasCollisionWithEnvObj(ImageView target) {
 		if(this.getBoundsInParent().intersects(target.getBoundsInParent())){
 			return true;
 		}
@@ -78,7 +80,7 @@ public abstract class Sprite extends ImageView{
 		return Integer.toString(ID);
   }
   
-	int hasCollisionWith(ArrayList<Enemy> targets) {
+	int hasCollisionWithEnemies(ArrayList<Enemy> targets) {
 		for(int i=0; i<targets.size(); i++) {
 			if(this.getBoundsInParent().intersects(targets.get(i).getBoundsInParent())){
 				return i;
@@ -86,13 +88,4 @@ public abstract class Sprite extends ImageView{
 		}
 		return -1;
 	}
-
-	public Image getPng() {
-		return png;
-	}
-
-	public void setPng(Image png) {
-		this.png = png;
-	}
-
 }

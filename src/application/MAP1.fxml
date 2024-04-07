@@ -1,16 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="onePlayerMap">
+<Pane fx:id="MapPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MAP1Controller">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="80.0" layoutX="260.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="156.0" layoutX="563.0" layoutY="380.0" pickOnBounds="true" rotate="-30.0">
          <image>
-            <Image url="@../../sprites/clyde-pixilart.png" />
+            <Image url="@../../sprites/bridge.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="river8" fitHeight="84.0" fitWidth="119.0" layoutX="581.0" layoutY="458.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="149.0" layoutX="566.0" layoutY="382.0" pickOnBounds="true" rotate="30.0">
+         <image>
+            <Image url="@../../sprites/bridge.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river7" fitHeight="313.0" fitWidth="23.0" layoutX="1232.0" layoutY="246.0" pickOnBounds="true" rotate="90.0">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river6" fitHeight="268.0" fitWidth="23.0" layoutX="819.0" layoutY="266.0" pickOnBounds="true" rotate="90.0">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river5" fitHeight="279.0" fitWidth="28.0" layoutX="81.0" layoutY="260.0" pickOnBounds="true" rotate="90.0">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river4" fitHeight="222.0" fitWidth="27.0" layoutX="454.0" layoutY="292.0" pickOnBounds="true" rotate="90.0">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river3" fitHeight="133.0" fitWidth="133.0" layoutX="571.0" layoutY="671.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river1" fitHeight="94.0" fitWidth="133.0" layoutX="571.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river2" fitHeight="143.0" fitWidth="119.0" layoutX="577.0" layoutY="220.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../sprites/river.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="391.0" fitWidth="587.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/map1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="391.0" fitWidth="657.0" layoutX="693.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/map1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="391.0" fitWidth="587.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/map1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="391.0" fitWidth="587.0" layoutX="692.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/map1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="540.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/bridge.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="928.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../sprites/bridge.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="194.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../sprites/bridge.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="540.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/bridge.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="94.0" fitWidth="200.0" layoutX="546.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../sprites/timerBackGround.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timerLabel" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutX="573.0" layoutY="21.0" pickOnBounds="false" prefHeight="53.0" prefWidth="133.0" textOverrun="CLIP">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Pane fx:id="itemPane" layoutX="344.0" layoutY="232.0" prefHeight="354.0" prefWidth="587.0" style="-fx-background-color: #1f3a21;" visible="false">
+         <children>
+            <VBox alignment="CENTER" prefHeight="347.0" prefWidth="587.0" spacing="10.0">
+               <children>
+                  <Button fx:id="item1But" mnemonicParsing="false" onAction="#selectItem1" prefHeight="115.0" prefWidth="575.0">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <ImageView fx:id="item1Img" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+                              <Text fx:id="item1Desc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="item2But" mnemonicParsing="false" onAction="#selectItem2" prefHeight="115.0" prefWidth="575.0">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" prefHeight="101.0" prefWidth="309.0" spacing="50.0">
+                           <children>
+                              <ImageView fx:id="item2Img" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+                              <Text fx:id="item2Desc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="item3But" mnemonicParsing="false" onAction="#selectItem3" prefHeight="115.0" prefWidth="575.0">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <ImageView fx:id="item3Img" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+                              <Text fx:id="item3Desc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <ProgressBar fx:id="healthBar" layoutX="153.0" layoutY="729.0" prefHeight="18.0" prefWidth="300.0" progress="1.0" style="-fx-accent: green;" />
+      <VBox layoutX="14.0" layoutY="692.0" prefHeight="58.0" prefWidth="139.0">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="276.0" spacing="5.0">
+               <children>
+                  <ImageView fx:id="item1Inv" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="item2Inv" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="item3Inv" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="36.0">
+               <children>
+                  <Text fx:id="item1Level" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="item2Level" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="item3Level" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ProgressBar fx:id="expBar" layoutX="153.0" layoutY="756.0" prefHeight="18.0" prefWidth="300.0" progress="0.0" />
    </children>
-</AnchorPane>
+</Pane>

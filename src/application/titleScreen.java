@@ -15,7 +15,7 @@ public class titleScreen {
     private Button settingsButton;
     @FXML
     void onPlay(ActionEvent event) {
-    	viewSwitcher.switchTo(View.MAPTEST);
+    	viewSwitcher.switchTo(View.MAPSELECTOR);
     }
     @FXML
     void onSettings(ActionEvent event) {

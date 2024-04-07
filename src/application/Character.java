@@ -1,18 +1,21 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Character extends Sprite {
 	
-	private int health;
-	private int moveSpeed;
+	protected int health;
+	protected double moveSpeed;
 	
 	//Constructors
 	public Character() {
 		health = 10;
 		moveSpeed = 5;
 	}
-	public Character(int x, int y, int ID, Image png, int health, int moveSpeed) {
+	public Character(int x, int y, int ID, Image png, int health, double moveSpeed) {
 		super(x, y, ID, png);
 		this.health = health;
 		this.moveSpeed = moveSpeed;
@@ -24,7 +27,7 @@ public class Character extends Sprite {
 		return health;
 	}
 	
-	public int getMoveSpeed(){
+	public double getMoveSpeed(){
 		return moveSpeed;
 	}
 	
@@ -37,15 +40,12 @@ public class Character extends Sprite {
 		moveSpeed = m;
 	}
 	
-	//Other Methods
-	public void die(){
-		//Implement death
-	}
-	
-	public void takeDmg(int dmg){
-		setHealth(getHealth() - dmg);
-		if(getHealth() <= 0) {
-			die();
+	public boolean hasCollisionWithEnv(ArrayList<ImageView> envObj) {
+		for(int i=0; i<envObj.size(); i++) {
+			if(this.hasCollisionWithEnvObj(envObj.get(i))) {
+				return true;
+			}
 		}
+		return false;
 	}
 }

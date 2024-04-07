@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane fx:id="MapPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Map2Controller">
+   <children>
+      <ImageView fx:id="leftRiver" fitHeight="800.0" fitWidth="57.0" layoutX="1223.0" pickOnBounds="true">
+         <image>
+            <Image url="@river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rightRiver" fitHeight="800.0" fitWidth="57.0" layoutX="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@river.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock1" fitHeight="800.0" fitWidth="1230.0" layoutX="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@map.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock2" fitHeight="91.0" fitWidth="57.0" layoutX="309.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock3" fitHeight="91.0" fitWidth="57.0" layoutX="366.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock5" fitHeight="91.0" fitWidth="57.0" layoutX="423.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock6" fitHeight="91.0" fitWidth="57.0" layoutX="480.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock7" fitHeight="91.0" fitWidth="57.0" layoutX="537.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock8" fitHeight="91.0" fitWidth="57.0" layoutX="594.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock9" fitHeight="91.0" fitWidth="57.0" layoutX="805.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock10" fitHeight="91.0" fitWidth="57.0" layoutX="862.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock11" fitHeight="91.0" fitWidth="57.0" layoutX="919.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock12" fitHeight="91.0" fitWidth="57.0" layoutX="227.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock13" fitHeight="91.0" fitWidth="57.0" layoutX="948.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock14" fitHeight="91.0" fitWidth="57.0" layoutX="651.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timerLabel" layoutX="666.0" layoutY="14.0" text="Label" />
+   </children>
+</Pane>
